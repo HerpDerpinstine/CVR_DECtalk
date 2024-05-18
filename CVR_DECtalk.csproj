@@ -1,0 +1,86 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Release</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{4B1F6EFB-6768-418E-A04E-E3AD4D982E9A}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>CVR_DECtalk</RootNamespace>
+    <AssemblyName>CVR_DECtalk</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <LangVersion>10.0</LangVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugSymbols>false</DebugSymbols>
+    <DebugType>None</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>Output\</OutputPath>
+    <DefineConstants>
+    </DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <Prefer32Bit>false</Prefer32Bit>
+    <DebugSymbols>false</DebugSymbols>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Assembly-CSharp">
+      <HintPath>Libs\Assembly-CSharp.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="MelonLoader, Version=0.6.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>packages\LavaGang.MelonLoader.0.6.1\lib\net35\MelonLoader.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="UnityEngine.CoreModule">
+      <HintPath>Libs\UnityEngine.CoreModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Main.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="SharpTalk\DeviceOptions.cs" />
+    <Compile Include="SharpTalk\DECtalkEngine.cs" />
+    <Compile Include="SharpTalk\DECtalkException.cs" />
+    <Compile Include="SharpTalk\LanguageCode.cs" />
+    <Compile Include="SharpTalk\MMRESULT.cs" />
+    <Compile Include="SharpTalk\PhonemeEventArgs.cs" />
+    <Compile Include="SharpTalk\SpeakerParams.cs" />
+    <Compile Include="SharpTalk\SpeakFlags.cs" />
+    <Compile Include="SharpTalk\TTSMessageType.cs" />
+    <Compile Include="SharpTalk\TTSVoice.cs" />
+    <Compile Include="SharpTalk\TTS_BUFFER_T.cs" />
+    <Compile Include="SharpTalk\TTS_INDEX_T.cs" />
+    <Compile Include="SharpTalk\TTS_PHONEME_T.cs" />
+    <Compile Include="TTSModule_DECTalk.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="DECtalk\dtalk_us.dic" />
+    <None Include="Properties\packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="DECtalk\DECtalk.dll" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="DECtalk\dtalk_us.dll" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
