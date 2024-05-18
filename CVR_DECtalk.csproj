@@ -67,7 +67,6 @@
     <Compile Include="TTSModule_DECTalk.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="DECtalk\dtalk_us.dic" />
     <None Include="Properties\packages.config" />
   </ItemGroup>
   <ItemGroup>
@@ -75,12 +74,6 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="DECtalk\DECtalk.dll" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="DECtalk\dtalk_us.dll" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
