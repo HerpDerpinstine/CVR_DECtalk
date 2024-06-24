@@ -40,7 +40,7 @@ namespace CVR_DECtalk
         {
             _tts.Voice = (TtsVoice)Enum.Parse(typeof(TtsVoice), CurrentVoice);
 
-            byte[] memory = _tts.SpeakToMemory(msg);
+            byte[] memory = _tts.SpeakToMemory(msg, WAVEFORMAT.FORMAT_1M16);
             if (memory == null)
                 return null;
 

@@ -51,11 +51,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <Compile Include="SharpTalk\DeviceOptions.cs" />
     <Compile Include="SharpTalk\DECtalkEngine.cs" />
     <Compile Include="SharpTalk\DECtalkException.cs" />
     <Compile Include="SharpTalk\LanguageCode.cs" />
     <Compile Include="SharpTalk\MMRESULT.cs" />
+    <Compile Include="SharpTalk\WAVEFORMAT.cs" />
     <Compile Include="SharpTalk\PhonemeEventArgs.cs" />
     <Compile Include="SharpTalk\SpeakerParams.cs" />
     <Compile Include="SharpTalk\SpeakFlags.cs" />

@@ -116,7 +116,7 @@ namespace SharpTalk
         static unsafe extern MMRESULT TextToSpeechAddBuffer(IntPtr handle, TtsBufferManaged.TTS_BUFFER_T* buffer);
 
         [DllImport("DECtalk.dll")]
-        static extern MMRESULT TextToSpeechOpenInMemory(IntPtr handle, uint format);
+        static extern MMRESULT TextToSpeechOpenInMemory(IntPtr handle, WAVEFORMAT format);
 
         [DllImport("DECtalk.dll")]
         static extern MMRESULT TextToSpeechCloseInMemory(IntPtr handle);
@@ -140,8 +140,6 @@ namespace SharpTalk
         #endregion
 
         #region API Constants
-
-        private const uint WaveFormat_1M16 = 0x00000004;
 
         private const uint TtsNotSupported = 0x7FFF;
         private const uint TtsNotAvailable = 0x7FFE;
@@ -238,7 +236,7 @@ namespace SharpTalk
             }
 
             Check(TextToSpeechStartupEx(out _handle, 0xFFFFFFFF, 0, _callback, ref _handle));
-
+            
             Speak("[:phone on]"); // Enable singing by default
         }
 
@@ -332,10 +330,18 @@ namespace SharpTalk
         /// <param name="input">The input text to process.</param>
         /// <returns></returns>
         public byte[] SpeakToMemory(string input)
+            => SpeakToMemory(input, WAVEFORMAT.FORMAT_1M16);
+
+        /// <summary>
+        /// Writes speech data to an internal buffer and returns it as a byte array containing 16-bit 11025Hz mono PCM data.
+        /// </summary>
+        /// <param name="input">The input text to process.</param>
+        /// <returns></returns>
+        public byte[] SpeakToMemory(string input, WAVEFORMAT format)
         {
             using (_bufferStream = new MemoryStream())
             {
-                using (OpenInMemory(WaveFormat_1M16))
+                using (OpenInMemory(format))
                 using (ReadyBuffer())
                 {
                     Speak(input);
@@ -353,9 +359,18 @@ namespace SharpTalk
         /// <param name="input">The input text to process.</param>
         /// <returns></returns>
         public void SpeakToStream(Stream stream, string input)
+            => SpeakToStream(stream, input, WAVEFORMAT.FORMAT_1M16);
+
+        /// <summary>
+        /// Writes speech data to the specified stream as 16-bit 11025Hz mono PCM data.
+        /// </summary>
+        /// <param name="stream">The stream to write to.</param>
+        /// <param name="input">The input text to process.</param>
+        /// <returns></returns>
+        public void SpeakToStream(Stream stream, string input, WAVEFORMAT format)
         {
             _bufferStream = stream;
-            using (OpenInMemory(WaveFormat_1M16))
+            using (OpenInMemory(format))
             using (ReadyBuffer())
             {
                 Speak(input);
@@ -477,7 +492,7 @@ namespace SharpTalk
         }
 
         #region OpenCloseInMemory
-        private InMemoryRaiiHelper OpenInMemory(uint format)
+        private InMemoryRaiiHelper OpenInMemory(WAVEFORMAT format)
         {
             Check(TextToSpeechOpenInMemory(_handle, format));
             return new InMemoryRaiiHelper(this);
