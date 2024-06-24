@@ -12,22 +12,25 @@ namespace CVR_DECtalk
         public const string Description = "Adds DECtalk support to Text-To-Speech";
         public const string Author = "Herp Derpinstine";
         public const string Company = "Lava Gang";
-        public const string Version = "1.0.2";
+        public const string Version = "1.0.3";
         public const string DownloadLink = "https://github.com/HerpDerpinstine/CVR_DECtalk";
     }
 
     public class CVR_DECtalk : MelonMod
     {
+        internal static MelonLogger.Instance logger;
+
         public override void OnInitializeMelon()
         {
+            logger = LoggerInstance;
+
             WriteFile("DECtalk.dll", Resources.DECtalk_dll);
             WriteFile("dtalk_us.dll", Resources.dtalk_us_dll);
             WriteFile("dtalk_us.dic", Resources.dtalk_us_dic);
 
-            MelonLogger.Msg("Adding DECtalk Text-To-Speech Module...");
+            MelonLogger.Msg("Adding TTS Module...");
             Comms_TTSHandler.AddModule<TTSModule_DECtalk>("DECtalk", "DECtalk");
-
-            MelonLogger.Msg("Initialized!");
+            MelonLogger.Msg("TTS Module Added!");
         }
 
         private void WriteFile(string fileName, byte[] fileData)
