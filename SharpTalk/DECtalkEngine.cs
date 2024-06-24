@@ -236,8 +236,6 @@ namespace SharpTalk
             }
 
             Check(TextToSpeechStartupEx(out _handle, 0xFFFFFFFF, 0, _callback, ref _handle));
-            
-            Speak("[:phone on]"); // Enable singing by default
         }
 
         #endregion
@@ -344,6 +342,7 @@ namespace SharpTalk
                 using (OpenInMemory(format))
                 using (ReadyBuffer())
                 {
+                    Speak("[:phone on]");
                     Speak(input);
                     Sync();
                     TextToSpeechReset(_handle, false);
@@ -373,9 +372,10 @@ namespace SharpTalk
             using (OpenInMemory(format))
             using (ReadyBuffer())
             {
-                Speak(input);
-                Sync();
-                TextToSpeechReset(_handle, false);
+	            Speak("[:phone on]");
+	            Speak(input);
+	            Sync();
+	            TextToSpeechReset(_handle, false);
             }
             _bufferStream = null;
         }
