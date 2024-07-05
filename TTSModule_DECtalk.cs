@@ -11,13 +11,11 @@ namespace CVR_DECtalk
 {
     internal class TTSModule_DECtalk : Comms_TTSModule
     {
-		private const int WAV_HEADER_SIZE = 40;
-		private const int WAV_FOOTER_SIZE = 8;
+        private const int WAV_HEADER_SIZE = 40;
+        private const int WAV_FOOTER_SIZE = 8;
 		
         private static Type _ttsVoiceType = typeof(TtsVoice);
         private DECtalkEngine _tts;
-
-        private Dictionary<string, SpeakerParams> _voiceParams = new();
 
         public override void Initialize()
         {
@@ -28,7 +26,7 @@ namespace CVR_DECtalk
             _tts = new DECtalkEngine(LanguageCode.None);
 
             CVR_DECtalk.logger.Msg("Loading Voices...");
-			foreach (TtsVoice ttsVoice in (TtsVoice[])Enum.GetValues(_ttsVoiceType))
+            foreach (TtsVoice ttsVoice in (TtsVoice[])Enum.GetValues(_ttsVoiceType))
             {
                 string name = Enum.GetName(_ttsVoiceType, ttsVoice);
                 Voices[name] = name;
