@@ -27,3 +27,13 @@ CVR_DECtalk is licensed under the GPL-3.0 License. See [LICENSE](https://github.
 Third-party Libraries used as Source Code and/or bundled in Binary Form:
 - [SharpTalk](https://github.com/whatsecretproject/SharpTalk)
 - [DECtalk](https://github.com/dectalk/dectalk) is licensed under All rights reserved, Copyright (C) 2002-2003 FONIX Corporation.
+
+---
+
+ChilloutVR: Terms of Service  
+[Section 7: Modding our Games](https://documentation.abinteractive.net/official/legal/tos/#7-modding-our-games)
+```
+This mod is an independent creation and is not affiliated with, supported by or approved by Alpha Blend Interactive. 
+Use of this mod is done so at the user's own risk and the creator cannot be held responsible for any issues arising from its use.
+To the best of my knowledge, I have adhered to the Modding Guidelines established by Alpha Blend Interactive.
+```
