@@ -30,7 +30,7 @@ namespace CVR_DECtalk
             {
                 string name = Enum.GetName(_ttsVoiceType, ttsVoice);
                 Voices[name] = name;
-				CVR_DECtalk.logger.Msg(name);
+		CVR_DECtalk.logger.Msg(name);
             }
         }
 
@@ -43,8 +43,8 @@ namespace CVR_DECtalk
                 return null;
 
             int length = memory.Length;
-			int offset = ((WAV_HEADER_SIZE * 4) + WAV_FOOTER_SIZE);
-			length -= offset;
+            int offset = ((WAV_HEADER_SIZE * 4) + WAV_FOOTER_SIZE);
+            length -= offset;
 			
             short[] dst = new short[length];
             Buffer.BlockCopy(memory, offset, dst, 0, length);

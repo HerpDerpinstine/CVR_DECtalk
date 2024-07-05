@@ -12,7 +12,7 @@ namespace CVR_DECtalk
         public const string Description = "Adds DECtalk support to Text-To-Speech";
         public const string Author = "Herp Derpinstine";
         public const string Company = "Lava Gang";
-        public const string Version = "1.0.3";
+        public const string Version = "1.0.4";
         public const string DownloadLink = "https://github.com/HerpDerpinstine/CVR_DECtalk";
     }
 
