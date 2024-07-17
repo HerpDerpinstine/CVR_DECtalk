@@ -373,3 +373,4 @@ MigrationBackup/
 Output
 Libs/*.dll
 packages/
+CVR_DECtalk.json
