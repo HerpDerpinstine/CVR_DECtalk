@@ -7,11 +7,7 @@ Mod for ChilloutVR using MelonLoader
 
 ### NOTICE:
 
-- This repository was once privated for good reason.
-- However, it has come to my attention this project is being decompiled and/or rereleased against my wishes.
-- As such I have made this repository public again to clear up any confusion and issues that this has caused.
-- I would have preferred if people had kindly asked me to restore the original repository.
-- This project is provided AS-IS with minimal support.
+- This project is provided **AS-IS** with minimal support.
 
 ---
 
@@ -37,13 +33,3 @@ CVR_DECtalk is licensed under the GPL-3.0 License. See [LICENSE](https://github.
 Third-party Libraries used as Source Code and/or bundled in Binary Form:
 - [SharpTalk](https://github.com/whatsecretproject/SharpTalk)
 - [DECtalk](https://github.com/dectalk/dectalk) is licensed under All rights reserved, Copyright (C) 2002-2003 FONIX Corporation.
-
----
-
-ChilloutVR: Terms of Service  
-[Section 7: Modding our Games](https://documentation.abinteractive.net/official/legal/tos/#7-modding-our-games)
-```
-This mod is an independent creation and is not affiliated with, supported by or approved by Alpha Blend Interactive. 
-Use of this mod is done so at the user's own risk and the creator cannot be held responsible for any issues arising from its use.
-To the best of my knowledge, I have adhered to the Modding Guidelines established by Alpha Blend Interactive.
-```
