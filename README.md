@@ -5,6 +5,16 @@ Mod for ChilloutVR using MelonLoader
 
 ---
 
+### NOTICE:
+
+- This repository was once privated for good reason.
+- However, it has come to my attention this project is being decompiled and/or rereleased against my wishes.
+- As such I have made this repository public again to clear up any confusion and issues that this has caused.
+- I would have preferred if people had kindly asked me to restore the original repository.
+- This project is provided AS-IS with minimal support.
+
+---
+
 ### REQUIREMENTS:
 
 - [MelonLoader](https://github.com/LavaGang/MelonLoader/releases) v0.6.1 or higher.
